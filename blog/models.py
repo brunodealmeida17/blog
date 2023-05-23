@@ -54,7 +54,7 @@ class Noticia(TimeStampedModel):
     titulo = models.CharField(max_length=255, verbose_name="titulo")
     slug = AutoSlugField(unique=True, always_update=False, populate_from="titulo")
     image = models.ImageField(upload_to="products/%Y/%m/%d", blank=True, verbose_name="Imagem da capa")
-    descricao = models.TextField(blank=True)
+    descricao = models.CharField(max_length=300, blank=True)
     informacao = models.TextField(blank=True)   
     type = models.CharField(
         default = "V",

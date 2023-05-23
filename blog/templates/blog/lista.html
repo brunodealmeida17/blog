@@ -7,28 +7,37 @@
 
 
 <div class="container">
-    <div class="row">
-      <div class="col-10">
-        {% for noticia in noticias %}
-            <table class="mb-5">
-                <tr>
-                  <td><img  width="300" src='http://i.stack.imgur.com/dioLI.png'/></td>                  
-                <td> <h1 style="font-size: xx-large;">{{noticia.titulo}}</h1>
-                    <p>{{noticia.descricao}}</p>
-                <p>{{ noticia.created|date:"d/m/Y" }} as {{ noticia.created|date:"H:i" }} </p>
-                </td>
-                </tr>               
-              </table>
-          
-          {% endfor %}
-      </div>
+  <div class="row">
+    <div class="col-md-10">
+      {% for noticia in noticias %}
+        <div class="card mb-4" style="height: auto;">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="http://i.stack.imgur.com/dioLI.png" class="card-img" alt="Imagem">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h1 class="card-title text-wrap" style="font-size: xx-large;">{{ noticia.titulo }}</h1>
+                <p class="card-text text-wrap">{{ noticia.descricao }}</p>
+                <p>{{ noticia.created|date:"d/m/Y" }} as {{ noticia.created|date:"H:i" }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
 
-      <div class="col-2">
-        <h4>Previsão do Tempo</h4>
-        <div id="ww_16b2feaf6b2fe" v='1.3' loc='id' a='{"t":"ticker","lang":"pt","sl_lpl":1,"ids":["wl4984"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'><a href="https://weatherwidget.org/ru/" id="ww_16b2feaf6b2fe_u" target="_blank">Бесплатный HTML погодный информер для сайта</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_16b2feaf6b2fe"></script>
-      </div>
+    <div class="col-md-2 order-first order-md-last">
+      <h4>Previsão do Tempo</h4>
+      <div id="ww_16b2feaf6b2fe" v="1.3" loc="id" a='{"t":"ticker","lang":"pt","sl_lpl":1,"ids":["wl4984"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'><a href="https://weatherwidget.org/ru/" id="ww_16b2feaf6b2fe_u" target="_blank">Бесплатный HTML погодный информер для сайта</a></div>
+      <script async src="https://app1.weatherwidget.org/js/?id=ww_16b2feaf6b2fe"></script>
     </div>
   </div>
+</div>
+
+
+
+
 
 
  
